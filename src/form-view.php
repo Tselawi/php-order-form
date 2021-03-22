@@ -19,22 +19,13 @@ if($submit):
 else:
 ?>
 <div class="container">
-    <h1>Order pizzas in restaurant "the Personal Pizza Processors"</h1>
-    <nav>
-        <ul class="nav">
-            <li class="nav-item">
-                <a class="nav-link"  href="index.php?food=pizzas"> Order pizzas</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link"  href="index.php?food=drinks">Order drinks</a>
-            </li>
-        </ul>
-    </nav>
+    <h2 d-flex align="center"><span class="badge bg-success">Mr.Pizza </span><span class="badge bg-danger mx-1">Express Delivery</h2>
+
     <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
         <div class="form-row">
             <div class="form-group col-md-6">
-                <label for="email">E-mail:</label>
-                <input type="text" id="email" name="email" class="form-control" value="<?= $userEmail ?? "" ?>"><?= $emailErr ?? "" ?>
+                <label for="email" class="badge bg-dark my-1">E-mail:</label>
+                <input type="text" id="email" placeholder="Enter your Email" name="email" class="form-control" value="<?= $userEmail ?? "" ?>"><?= $emailErr ?? "" ?>
             </div>
             <div></div>
         </div>
@@ -44,29 +35,38 @@ else:
 
             <div class="form-row">
                 <div class="form-group col-md-6">
-                    <label for="street">Street:</label>
-                    <input type="text" name="street" id="street" class="form-control" value="<?= $streetName ?? "" ?>" required>
+                    <label for="street" class="badge bg-dark my-1">Street:</label>
+                    <input type="text" placeholder="Enter your street name" name="street" id="street" class="form-control" value="<?= $streetName ?? "" ?>" required>
 
                 </div>
                 <div class="form-group col-md-6">
-                    <label for="streetnumber">Street number:</label>
-                    <input type="text" id="streetnumber" name="streetnumber" class="form-control" value="<?= $streetNum ?? "" ?>" required> <?= $streetNumErr ?? "" ?>
+                    <label for="streetnumber" class="badge bg-dark my-1">Street number:</label>
+                    <input type="text" id="streetnumber" placeholder="Enter your street number" name="streetnumber" class="form-control" value="<?= $streetNum ?? "" ?>" required> <?= $streetNumErr ?? "" ?>
 
                 </div>
             </div>
             <div class="form-row">
                 <div class="form-group col-md-6">
-                    <label for="city">City:</label>
-                    <input type="text" id="city" name="city" class="form-control" value="<?= $cityName ?? "" ?>" required>
+                    <label for="city" class="badge bg-dark my-1">City:</label>
+                    <input type="text" id="city" placeholder="Enter Your town" name="city" class="form-control" value="<?= $cityName ?? "" ?>" required>
 
                 </div>
                 <div class="form-group col-md-6">
-                    <label for="zipcode">Zipcode</label>
-                    <input type="text" id="zipcode" name="zipcode" class="form-control" value="<?= $zipCode ?? "" ?>" required><?= $zipcodeErr ?? "" ?>
+                    <label for="zipcode" class="badge bg-dark my-1">Zipcode</label>
+                    <input type="text" id="zipcode" placeholder="Enter Your Zipcode" name="zipcode" class="form-control" value="<?= $zipCode ?? "" ?>" required><?= $zipcodeErr ?? "" ?>
                 </div>
             </div>
         </fieldset>
-
+        <nav>
+            <ul class="nav my-3">
+                <li class="nav-item">
+                    <a class="nav-link badge bg-success mx-4 p-2"  href="index.php?food=pizzas"> Order pizzas</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link badge bg-danger p-2"  href="index.php?food=drinks">Order drinks</a>
+                </li>
+            </ul>
+        </nav>
         <fieldset>
             <legend>Products</legend>
             <?php global $products; foreach ($products AS $i => $product): ?>
@@ -83,7 +83,7 @@ else:
             Express delivery (+ 5 EUR)
         </label>
 
-        <button type="submit" class="btn btn-primary" name="submit">Order!</button>
+        <button type="submit" class="btn btn-info" name="submit">Order!</button>
     </form>
 
     <footer>You already ordered <?= $_COOKIE["total_spend"] ?? "" ?> <strong>&euro; <?php
@@ -95,6 +95,12 @@ else:
 <style>
     footer {
         text-align: center;
+    }
+    body{
+        background-image: url("https://image.freepik.com/free-photo/fresh-pizza-delivery-box-grey-concrete-background-top-view-copy-space_80743-1335.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+
     }
 </style>
 <?php

@@ -100,7 +100,7 @@ if (isset($_POST['submit'])) {
 
 
         // display the total amount
-        echo '<div class="alert alert-warning" role="alert">Your Total amount is : ' . number_format($totalValue , 2) . ' &euro;' . '</div>';
+        echo '<div class="alert alert-success" role="alert">Your Total amount is : ' . number_format($totalValue , 2) . ' &euro;' . '</div>';
         $submit = true;
 
 
