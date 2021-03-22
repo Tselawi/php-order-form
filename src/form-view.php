@@ -31,7 +31,7 @@ else:
         </div>
 
         <fieldset>
-            <legend>Address</legend>
+            <legend><span class="badge bg-warning my-2 p-2">Address </span></legend>
 
             <div class="form-row">
                 <div class="form-group col-md-6">
@@ -83,7 +83,7 @@ else:
             Express delivery (+ 5 EUR)
         </label>
 
-        <button type="submit" class="btn btn-info" name="submit">Order!</button>
+        <button type="submit" class="btn btn-warning" name="submit">Order!</button>
     </form>
 
     <footer>You already ordered <?= $_COOKIE["total_spend"] ?? "" ?> <strong>&euro; <?php
