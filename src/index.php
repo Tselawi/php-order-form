@@ -71,7 +71,7 @@ if (isset($_POST['submit'])) {
         setcookie('streetnumber', "{$streetNum}", time() + 3600, '/' );
         setcookie('city',$cityName , time() + 3600, '/' );
         setcookie('zipcode',"{$zipCode}", time() + 3600, '/' );
-        setcookie('totalSpend', "{$totalValue}", time()+ 3600, '/'); // here we save the total value in cookie!
+
 
         // here we set total spend in cookie..!
         if (isset($_COOKIE["totalSpend"])){
@@ -86,21 +86,20 @@ if (isset($_POST['submit'])) {
                 $totalValue += $price;
             }
         }
+        setcookie('totalSpend', "{$totalValue}", time()+ 3600, '/'); // here we save the total value in cookie!
         // if you click to express delivery checkbox
         if(isset($_POST['express_delivery'])){
             $totalValue+=5;
             echo '<div class="alert alert-primary" role="alert">Your order will arrive in 30 Minutes
                                 </div>';
-
         // if express delivery checkbox is empty!
         }elseif (empty($_POST['express_delivery'])){
            echo '<div class="alert alert-primary" role="alert">Your order will arrive in one hour
             </div>';
         }
-
-
         // display the total amount
         echo '<div class="alert alert-success" role="alert">Your Total amount is : ' . number_format($totalValue , 2) . ' &euro;' . '</div>';
+
         $submit = true;
 
 
