@@ -86,7 +86,7 @@ else:
         <button type="submit" class="btn btn-warning" name="submit">Order!</button>
     </form>
 
-    <footer>You already ordered <?= $_COOKIE["total_spend"] ?? "" ?> <strong>&euro; <?php
+    <footer>You already ordered <?= $_COOKIE["totalSpend"] ?? "" ?> <strong>&euro; <?php
             global $totalValue;
             echo $totalValue
             ?></strong> in pizza(s) and drinks.</footer>
