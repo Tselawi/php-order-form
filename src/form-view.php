@@ -68,7 +68,7 @@ else:
             </ul>
         </nav>
         <fieldset>
-            <legend>Products</legend>
+            <legend><span class="badge bg-warning my-2 p-2">Products</span></legend>
             <?php global $products; foreach ($products AS $i => $product): ?>
 
                 <label>
